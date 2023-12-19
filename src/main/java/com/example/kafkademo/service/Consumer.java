@@ -1,14 +1,21 @@
 package com.example.kafkademo.service;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
+
+
 
 @Service
 public class Consumer {
 
-  @KafkaListener(topics = "firstTopic",groupId="topicGroupID")
+  public static final Logger log= LoggerFactory.getLogger(Consumer.class);
+
+  @KafkaListener(topics = "starHealth",groupId="topicGroupID")
   public void listenMessage(String receivedMessage){
-    System.out.printf("Received Message "+ receivedMessage);
+    log.info("message send "+receivedMessage);
+
   }
 }

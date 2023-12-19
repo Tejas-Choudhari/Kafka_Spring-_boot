@@ -11,6 +11,6 @@ public class Producer {
   KafkaTemplate<String ,String> kafkaTemplate;
 
   public void sendMessage(String message){
-    kafkaTemplate.send("firstTopic",message);
+    kafkaTemplate.send("starHealth",message);
   }
 }
