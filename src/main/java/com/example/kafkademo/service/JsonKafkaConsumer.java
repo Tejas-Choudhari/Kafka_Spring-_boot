@@ -10,12 +10,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class JsonKafkaConsumer {
 
-  public static final Logger log = LoggerFactory.getLogger(JsonKafkaProducer.class);
+  public static final Logger log = LoggerFactory.getLogger(JsonKafkaConsumer.class);
 
   @KafkaListener(topics = "jsonStarHealth",groupId = "jsonid")
   public void jsonConsumer(User user){
 
-    log.info("Json message received "+user.toString());
+    log.info("Json message received");
   }
 
 }

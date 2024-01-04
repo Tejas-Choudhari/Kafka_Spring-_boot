@@ -15,7 +15,7 @@ public class Consumer {
 
   @KafkaListener(topics = "starHealth",groupId="topicGroupID")
   public void listenMessage(String receivedMessage){
-    log.info("message send "+receivedMessage);
+    log.info("message send: {} ",receivedMessage);
 
   }
 }
